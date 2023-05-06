@@ -39,14 +39,6 @@ jobs:
         git tag "${{ github.event.inputs.tag }}" -a -m "Release test"
     - name: Build
       run: python build-release.py
-    - name: Create release
-      uses: softprops/action-gh-release@v1
-      with:
-        tag_name: ${{ github.event.inputs.tag }}
-        files: |
-          release/*.zip
-          release/*.elf
-        draft: True
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
       with:
