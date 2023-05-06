@@ -42,7 +42,7 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
       with:
-        folder: releases/current
+        folder: release/current
         repository-name: MitchBradley/MitchBradley.github.io
         ssh-key: ${{ secrets.GHP_DEPLOY_KEY }}
         target-folder: releases/${{ github.event.inputs.tag }}
