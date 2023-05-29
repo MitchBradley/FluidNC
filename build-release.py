@@ -154,7 +154,7 @@ for mcu in ['esp32']:
             addImage(mcu + '-' + envName + '-' + flashsize + '-filesystem', '0xe000', 'littlefs.bin', buildDir, mcu + '/' + envName + '/' + flashsize)
             addImage(mcu + '-' + flashsize + '-partitions', '0x8000', 'partitions.bin', buildDir, mcu + '/' + flashsize)
             addImage(mcu + '-bootloader', '0x1000', 'bootloader.bin', buildDir, mcu)
-            addImage(mcu + '-bootapp', '0xe000', 'boot_app0.bin', buildDir, mcu)
+            addImage(mcu + '-bootapp', '0x3d0000', 'boot_app0.bin', buildDir, mcu)
 
 def addSection(node, name, description, choice):
     section = {
