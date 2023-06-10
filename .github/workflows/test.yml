@@ -7,4 +7,4 @@ jobs:
   build:
     steps:
     - name: Show secret
-    - run: echo ${{ secrets.JUNK }}
+      run: echo ${{ secrets.JUNK }}
