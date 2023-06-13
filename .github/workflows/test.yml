@@ -2,10 +2,28 @@ name: Test
 
 on:
   workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release version'
+        required: true
+
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Show secret
-      run: echo ${{ secrets.JUNK }}
+    - name: Create test directory
+      run: -
+      mkdir release/current
+      echo foo >release/current/bar
+    - name: Deploy to fluidnc-releases
+      uses: datalbry/copy_folder_to_another_repo_action@1.0.0
+      with:
+        source_folder: 'release/current'
+        destination_repo: 'fluidnc-releases'
+        destination_branch: 'main'
+        destination_folder: releases/${{ github.event.inputs.tag }}
+        user_email: wmb@firmworks.com
+        user_name: 'Mitch Bradley'
+        commit_msg: Release${{ github.event.inputs.tag }}
+  
