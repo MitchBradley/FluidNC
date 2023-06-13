@@ -13,9 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Create test directory
-      run: -
-      mkdir release/current
-      echo foo >release/current/bar
+      run: |
+        mkdir release/current
+        echo foo >release/current/bar
     - name: Deploy to fluidnc-releases
       uses: datalbry/copy_folder_to_another_repo_action@1.0.0
       with:
