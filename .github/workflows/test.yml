@@ -27,5 +27,5 @@ jobs:
         destination_folder: releases/${{ github.event.inputs.tag }}
         user_email: wmb@firmworks.com
         user_name: 'Mitch Bradley'
-        commit_msg: Release${{ github.event.inputs.tag }}
+        commit_msg: Release ${{ github.event.inputs.tag }}
   
