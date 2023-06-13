@@ -18,6 +18,8 @@ jobs:
         echo foo >release/current/bar
     - name: Deploy to fluidnc-releases
       uses: datalbry/copy_folder_to_another_repo_action@1.0.0
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
         source_folder: 'release/current'
         destination_repo: 'MitchBradley/fluidnc-releases'
