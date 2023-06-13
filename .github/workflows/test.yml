@@ -20,7 +20,7 @@ jobs:
       uses: datalbry/copy_folder_to_another_repo_action@1.0.0
       with:
         source_folder: 'release/current'
-        destination_repo: 'fluidnc-releases'
+        destination_repo: 'MitchBradley/fluidnc-releases'
         destination_branch: 'main'
         destination_folder: releases/${{ github.event.inputs.tag }}
         user_email: wmb@firmworks.com
